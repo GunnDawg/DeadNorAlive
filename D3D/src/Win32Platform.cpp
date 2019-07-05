@@ -34,6 +34,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 			}
 			if (wParam == VK_RIGHT)
 			{
+				Core::GSM->pop();
+
 				std::unique_ptr<GameState> scene02 = std::make_unique<Scene02>();
 				Core::GSM->push(std::move(scene02));
 			}
